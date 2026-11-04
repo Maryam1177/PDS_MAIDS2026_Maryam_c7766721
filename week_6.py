@@ -1,2 +1,3 @@
-git config --global user.name "Maryam Naderi"
-git config --global user.email "M.Naderi3987@student.leedsbeckett.ac.uk"
+File_object = open(r"MyFile1.txt","Access_Mode")
+
+
