@@ -99,3 +99,41 @@ b = np.fromfunction(f, (5, 4), dtype=int)
 print(b[:, 1])
 print(b[1:3, :])
 
+#Task 10:
+a = np.floor(10 * np.random.random((3, 4)))
+print(a.shape)
+print(a.ravel())
+print(a.reshape(6, 2))
+print(a.T)
+
+# copy is a new array.If I change it, the old one does not change.
+# View is the same array.If I change it the old one changes too.
+
+print(a.reshape(6, -1))
+# reshape with -1 : python works out that number for me.
+
+# Task 11:
+print(np.vstack((a, a)))
+print(np.hstack((a, a)))
+print(np.hsplit(a, 2))
+
+
+sensor = np.array([
+[21.5, 22.1, 21.9],
+[20.9, 21.3, 21.0],
+[22.4, 22.8, 23.0]
+])
+print(sensor.mean(axis=1))
+print(sensor.max())
+print((sensor-sensor.min())/ (sensor.max()-sensor.min()))
+print(sensor > sensor.min())
+
+data = np.random.randint(0, 100, size=(10, 5))
+print(data.mean(axis=0))
+centred = data - data.mean(axis=0)
+print(centred)
+
+print(data[data > data.mean()+data.std()])
+
+
+
