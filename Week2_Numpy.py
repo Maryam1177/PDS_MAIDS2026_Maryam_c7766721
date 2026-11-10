@@ -34,14 +34,17 @@ print(ones)
 empty = np.empty((2,3))
 print(empty)
 
-# empty is dangerous because it gives us random number, and we might use them by mistake.
+# empty is dangerous because it gives us random number, and we might
+# use them by mistake.
 
 #Task 4:
 
 print(np.arange(10,30,5))
 print(np.linspace(0,2,9))
 
-#Floating-point precision:  As computers can not save some decimals perfectly so it is going to round them a bit so tiny mistake can happen
+#Floating-point precision:  As computers can not save some decimals perfectly
+# so it is going to round them a bit so tiny mistake can happen.
+
 # Linspace is safer because we choose exactly how many number we get.
 
 
@@ -61,7 +64,8 @@ print(a-b)
 print(b ** 2)
 print(10 * np.sin(a))
 
-# In Numpy * multiplies each number by the one in the sane place. For matrix multiplication we use @.
+# In Numpy * multiplies each number by the one in the sane place.
+# For matrix multiplication we use @.
 
 #Task 6:
 A = np.array([[1,1],[0,1]])
@@ -89,7 +93,8 @@ print(a[:6:2])
 print(a[::-1])
 
 print(a[a > 100])
-# Masking is better because it uses one line instead of many and it is faster.
+# Masking is better because it uses one line instead
+# of many and it is faster.
 
 
 #Task 9:
@@ -135,5 +140,60 @@ print(centred)
 
 print(data[data > data.mean()+data.std()])
 
+#column means: column 5 has the lowest average.
+
+#zero-centre the data: negative numbers are below
+# their column's average the positive numbers are above it.
+
+# extract value > 1 standard deviation: There are the very
+# high numbers , all close to 99.
 
 
+#1. Panda is built on top of NumPy. Pandas table use NumPy array inside so
+#understanding NumPy makes pandas easier to learn.
+
+
+#2.Masking and vectorized operations replaced a loop. one line did the work of many lines.
+
+#3.Machine learning uses a lots of numbers. NumPy makes it fast
+#to do maths on big grids of numbers, like normalized data.
+
+
+#Tutorial: 2.2
+
+
+#Task 1:
+scores = np.array([
+[55, 62, 71, 68],
+[78, 85, 88, 90],
+[45, 50, 48, 52],
+[90, 92, 94, 96],
+[60, 65, 70, 75]
+])
+print(scores.shape)
+# There are 5 Students and 4 assessments.
+
+#Task 2:
+print(scores.mean(axis=1))
+print(scores.mean(axis=0))
+
+#Task 3:
+print(np.sum (np.all (scores>=40 , axis=1)))
+
+
+#Task 4:
+
+avg = scores.mean(axis=1)
+print(avg>=70)
+print(avg[avg>=70])
+
+#Task 5:
+print((scores-scores.min())/ (scores.max() - scores.min()))
+
+#Task 6:
+print(scores[scores>scores.mean()])
+print(np.sum(scores > scores.mean()))
+
+#Task 7:
+#Because NumPy does maths on the whole grid at once with no loops and it is faster.
+#Task 5 ( normalizing) would be the hardest because I would need loops to change every numbers one by one.
