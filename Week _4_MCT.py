@@ -205,6 +205,46 @@ plt.show()
 
 # Homework Task 2:
 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = pd.Series ([15, 16, 17, 18, 19, 19, 20,21, 21, 21, 21, 22, 22, 22, 23, 23, 25,26, 27, 29,31])
+
+plt.hist(data, bins= 10 , color="pink")
+plt.title ('Skewed Data')
+plt.xlabel('value')
+plt.ylabel('count')
+plt.show()
+print("skewness:", data.skew())
+
+# The skewness is about 0.54 which is positive but small,
+# so the data is almost normal with a slight positive (right ) skew.
 
 
+#Python _ Correlation
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+df = sns.load_dataset('iris')
+#without regression
+sns.pairplot(df, kind="scatter")
+plt.show()
+
+# Petal length and petal width is the strongest.
+# Sepal length and Sepal width is the weakness.
+
+
+# Visualize the Correlation Matrix (Heatmap)
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+# Load the iris dataset if not already loaded (assuming 'df' is the iris DataFrame)
+df = sns.load_dataset('iris')
+# Calculate the correlation matrix
+correlation_matrix = df.corr(numeric_only=True)
+# Create the heatmap
+plt.figure(figsize=(8, 6))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title('Overall Feature Correlation in Iris Dataset')
+plt.show()
 
