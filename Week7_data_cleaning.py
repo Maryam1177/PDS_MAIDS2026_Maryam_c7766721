@@ -15,6 +15,7 @@ product_data={'product': ['e-book', 'plants', 'Pencil'], 'unit_sold':
 [2000, 5000, 3000]}
 product_df = pd.DataFrame(data=product_data)
 print(product_df)
+<<<<<<< HEAD
 
 # using numpy array
 products = np.array([['','product','unit_sold'], [1, 'E-book',2000],
@@ -47,3 +48,5 @@ print(df_new)
 
 
 
+=======
+>>>>>>> bdf48676d9e25590f223820fc992a86324cf7c96
